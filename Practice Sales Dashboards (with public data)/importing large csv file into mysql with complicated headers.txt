@@ -1,0 +1,12 @@
+mysqlimport -u root -p kagglesalessample -c ordernumber,quantity_ordered,price_each,order_line_number,sales,order_date,status,qtr sales_data_sample.csv
+
+mysqlimport --ignore-lines=1 \
+            --fields-terminated-by=, \
+            --local -u root \
+            -p Database \
+             TableName.csv
+I found it at http://chriseiffel.com/everything-linux/how-to-import-a-large-csv-file-to-mysql/
+
+To make the delimiter a tab, use --fields-terminated-by='\t'
+
+
